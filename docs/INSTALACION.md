@@ -17,21 +17,21 @@ Linux x64 con entorno gráfico compatible con Electron; distribuciones antiguas 
 AppImage:
 
 ```sh
-chmod +x ajedrez-sencillo-1.1.0-linux-x64.AppImage
-./ajedrez-sencillo-1.1.0-linux-x64.AppImage
+chmod +x ajedrez-sencillo-1.1.0-linux-x86_64.AppImage
+./ajedrez-sencillo-1.1.0-linux-x86_64.AppImage
 ```
 
 Si FUSE no está disponible:
 
 ```sh
-./ajedrez-sencillo-1.1.0-linux-x64.AppImage --appimage-extract
+./ajedrez-sencillo-1.1.0-linux-x86_64.AppImage --appimage-extract
 ./squashfs-root/AppRun
 ```
 
 Debian/Ubuntu, abre el DEB en el gestor de paquetes o usa:
 
 ```sh
-sudo apt install ./ajedrez-sencillo-1.1.0-linux-x64.deb
+sudo apt install ./ajedrez-sencillo-1.1.0-linux-amd64.deb
 ```
 
 ## Android
