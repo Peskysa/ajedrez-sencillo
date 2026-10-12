@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382e">
+  <title>Ajedrez sencillo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E♞%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="chess.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">DOS PERSONAS · UN TABLERO</p><h1>Ajedrez sencillo<span>.</span></h1></div>
+      <span class="badge">Sin prisas, sin reloj</span>
+    </header>
+    <div class="layout">
+      <section class="game" aria-label="Partida de ajedrez">
+        <div class="board-top"><span id="top-player">NEGRAS</span><span id="turn-label">Juegan las blancas</span></div>
+        <div id="board" class="board" role="group" aria-label="Tablero: blancas abajo"></div>
+        <div class="board-bottom"><span id="bottom-player">BLANCAS</span><span>Selecciona una pieza y su destino</span></div>
+      </section>
+      <aside>
+        <section class="panel status-panel">
+          <p class="eyebrow">LA PARTIDA</p>
+          <h2 id="status" role="status" aria-live="polite">Turno de blancas</h2>
+          <p id="hint">Las blancas empiezan. Selecciona una pieza para ver dónde puede moverse.</p>
+          <div class="actions"><button id="reset" class="primary">Nueva partida</button><button id="flip" class="secondary">Girar tablero</button></div>
+        </section>
+        <section class="panel history-panel">
+          <div class="panel-heading"><h2>Movimientos</h2><span id="move-count">0 jugadas</span></div>
+          <p id="empty-history">Cada partida empieza con una idea.</p>
+          <ol id="history" aria-label="Historial de movimientos"></ol>
+        </section>
+        <details class="panel"><summary>Cómo jugar</summary>
+          <p>Jugad por turnos en este dispositivo. Pulsa una pieza: los puntos muestran sus destinos legales y los círculos, las capturas. Pulsa de nuevo la pieza para deseleccionarla.</p>
+          <p>El objetivo es dar jaque mate. Para enrocar, mueve el rey dos casillas. Al coronar un peón podrás elegir dama, torre, alfil o caballo.</p>
+          <p>También puedes usar Tab y Enter para seleccionar las casillas. El tablero se puede girar en cualquier momento.</p>
+          <p>Se detectan jaque mate, ahogado, material insuficiente básico, triple repetición y 50 movimientos sin capturas ni movimientos de peón. Estas dos últimas tablas se aplican automáticamente.</p>
+        </details>
+        <p class="footnote">Una partida en compañía. Sin cuentas ni conexión.</p>
+      </aside>
+    </div>
+  </main>
+  <dialog id="promotion-dialog" aria-labelledby="promotion-title"><h2 id="promotion-title">Tu peón ha llegado</h2><p>Elige en qué pieza se convierte.</p><div id="promotion-choices"></div></dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">¿Empezamos otra partida?</h2><p>Se borrará la partida actual.</p><div class="actions"><button id="confirm-reset" class="primary">Sí, nueva partida</button><button id="cancel-reset" class="secondary">Seguir jugando</button></div></dialog>
+</body>
+</html>
