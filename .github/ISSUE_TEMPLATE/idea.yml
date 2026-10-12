@@ -1,0 +1,10 @@
+name: Proponer una mejora
+description: Una idea para el tablero o su documentación.
+title: "[Idea] "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Qué propones y para qué serviría
+    validations:
+      required: true

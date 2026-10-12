@@ -1,0 +1,21 @@
+name: Informar de un error
+description: Un movimiento, control o instalación no funciona.
+title: "[Error] "
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: Plataforma y versión
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos, jugadas y resultado esperado
+      description: No incluyas datos personales.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Captura opcional
